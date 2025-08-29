@@ -35,7 +35,7 @@ export default function RootLayout({
           boxSizing: "border-box",
           // maxHeight: "873px",
           // maxWidth: "393px",
-          border: "1px solid red",
+          // border: "1px solid red",
           margin: "auto",
           borderRadius: "20px"
         }}
