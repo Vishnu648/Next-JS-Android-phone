@@ -29,3 +29,11 @@ body {
   padding: 0;
   margin: 0;
 } */
+.homeScrollContainer{
+  scroll-snap-type: x mandatory;
+}
+
+
+.homeScrollChild{
+  scroll-snap-align: center;
+}

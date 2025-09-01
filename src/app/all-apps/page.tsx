@@ -6,7 +6,7 @@ function page() {
     return (
         <div className='flex flex-col'>
 
-            <div className='flex justify-between border p-5 w-[90%] m-auto rounded-full bg-[#363a3c] mt-8'>
+            <div className='flex justify-between border p-8 w-[90%] m-auto rounded-full bg-[#363a3c] mt-8'>
                 <Image src="/icons/search.png" alt='google' height={50} width={50} />
                 <div className='flex gap-5'>
                     <Image src="/icons/menu.png" alt='google' height={50} width={50} />
