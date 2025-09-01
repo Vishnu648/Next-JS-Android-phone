@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { applications } from '@/utils/apps'
 
 function HomePage() {
 
@@ -33,7 +34,7 @@ function HomePage() {
             {
               lockScreenDetails.map((data) => {
                 return (
-                  <div className='border-8 border-amber-50 flex rounded-full p-8 text-3xl' style={{borderColor: data?.name == "temp" ? "#5fa6e7" : "green"}} key={data?.name}>
+                  <div className='border-8 border-amber-50 flex rounded-full p-8 text-3xl' style={{ borderColor: data?.name == "temp" ? "#5fa6e7" : "green" }} key={data?.name}>
                     {data?.value}
                   </div>
                 )
@@ -51,8 +52,16 @@ function HomePage() {
         </div>
       </div>
 
-      <div className='border w-full flex-[.5]'>
-            app space
+      <div className='w-full flex-[.5] grid grid-cols-5'>
+        {
+          applications.map((apps,index) => {
+
+            if(index<5)
+            return (
+              <Image key={apps.appName} src={apps.icon} alt={apps.appName} height={100} width={100} className='rounded-2xl'/>
+            )
+          })
+        }
       </div>
     </div>
   )
