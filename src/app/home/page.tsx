@@ -52,14 +52,17 @@ function HomePage() {
         </div>
       </div>
 
-      <div className='w-full flex-[.5] grid grid-cols-5'>
+      <div className='w-full flex-[.5] grid grid-cols-5 place-items-center'>
         {
-          applications.map((apps,index) => {
+          applications.map((apps, index) => {
 
-            if(index<5)
-            return (
-              <Image key={apps.appName} src={apps.icon} alt={apps.appName} height={100} width={100} className='rounded-2xl'/>
-            )
+            if (index < 5)
+              return (
+                <div key={apps.appName} className='flex flex-col items-center gap-2'>
+                  <Image src={apps.icon} alt={apps.appName} height={130} width={130} className='rounded-2xl' />
+                  <p className='text-2xl'>{apps?.appName}</p>
+                </div>
+              )
           })
         }
       </div>
