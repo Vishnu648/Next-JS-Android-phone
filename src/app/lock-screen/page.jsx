@@ -2,9 +2,11 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { useRef } from 'react';
+import { useRouter } from 'next/navigation';
 
 function LockScreen() {
 
+    const router = useRouter();
     const scrollContainerRef = useRef(null);
     const hour = new Date().getHours();
     const minute = new Date().getMinutes();
@@ -36,10 +38,14 @@ function LockScreen() {
         }
     };
 
+    const handleUnlock = () => {
+        router.push('/home')
+    }
+
     return (
-        <div className='h-screen flex flex-col items-center'>
-            <div className='flex flex-col items-center h-[200vh]'>
-                <p className='font-extrabold text-[14em]'>{`${hour} : ${minute}`}</p>
+        <div className='h-screen flex flex-col items-center relative'>
+            <div className='flex flex-col items-center'>
+                <p className='font-extrabold text-[14em]'>{`${hour.toString()?.length == 1 ? "0" + hour : hour} : ${minute.toString()?.length == 1 ? "0" + minute : minute}`}</p>
                 <p className='text-4xl'>Fri, 29 Aug
                     <Image src="/icons/weather.png" width={48} height={48} alt="weather" className='inline mx-2' />
                     26°
@@ -62,6 +68,10 @@ function LockScreen() {
 
                     </div>
                 </div> */}
+
+                <div className='absolute bottom-52 text-5xl' onClick={handleUnlock}>
+                    click to unclock
+                </div>
 
             </div>
         </div>
