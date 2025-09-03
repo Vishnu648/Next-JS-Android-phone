@@ -63,9 +63,9 @@ function GoogleNews() {
                 {
                     carts.map((data) => {
                         return (
-                            <div key={data?.name} className='border rounded-3xl flex flex-col p-5 text-3xl gap-10'>
-                                <p className='whitespace-nowrap'>{data?.name}</p>
-                                <p className='text-4xl whitespace-nowrap'>{data?.value}</p>
+                            <div key={data?.name} className='border rounded-3xl flex flex-col p-5 text-3xl gap-10 justify-between'>
+                                <p className={`whitespace-nowrap ${data?.name == "Settings" && "text-blue-300"}`}>{data?.name}</p>
+                                <p className={`${data?.name == "Settings" ? "text-2xl" : "text-4xl"} whitespace-nowrap`}>{data?.value}</p>
                             </div>
                         )
                     })
