@@ -2,7 +2,8 @@
 import { useEffect, useState } from 'react'
 import { applications } from '@/utils/apps';
 import Image from 'next/image';
-import AppSearch from '@/components/AppSearch'
+import AppSearch from '@/components/AppSearch';
+import Link from 'next/link';
 
 function page() {
 
@@ -32,10 +33,10 @@ function page() {
                     applications.map((apps, index) => {
                         if (index > 16 && index < 22)
                             return (
-                                <div key={apps.appName} className='flex flex-col items-center gap-2'>
+                                <Link href={`/${apps.appName.toLowerCase()}`} key={apps.appName} className='flex flex-col items-center gap-2'>
                                     <Image src={apps.icon} alt={apps.appName} height={130} width={130} className='rounded-2xl' />
                                     <p className='text-2xl'>{apps?.appName}</p>
-                                </div>
+                                </Link>
                             )
                     })
                 }
@@ -46,10 +47,10 @@ function page() {
                     searchArray.map((apps, index) => {
 
                         return (
-                            <div key={apps.appName} className='flex flex-col items-center gap-2'>
+                            <Link href={`/${apps.appName.toLowerCase()}`} key={apps.appName} className='flex flex-col items-center gap-2'>
                                 <Image src={apps.icon} alt={apps.appName} height={130} width={130} className='rounded-2xl' />
                                 <p className='text-2xl whitespace-nowrap'>{apps?.appName}</p>
-                            </div>
+                            </Link>
                         )
                     })
                 }
