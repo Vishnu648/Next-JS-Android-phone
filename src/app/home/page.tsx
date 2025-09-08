@@ -14,9 +14,9 @@ function HomePage() {
       {/* <div className=''>
         google news
       </div> */}
-      <GoogleNews/>
+      {/* <GoogleNews/> */}
 
-      {/* <MainHome /> */}
+      <MainHome />
 
       {/* other apps */}
       {/* <div>

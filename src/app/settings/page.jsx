@@ -8,7 +8,7 @@ function Settings() {
             <h2 className='text-8xl font-extrabold flex self-start'>Settings</h2>
             <div className='flex justify-between border w-[90%] px-3 rounded-full bg-[#363a3c] mt-8'>
                 <Image src="/icons/search.png" alt='google' height={50} width={50} className='my-5' />
-                <input type="text" placeholder='Search settings' className='w-full ml-2' />
+                <input type="text" placeholder='Search settings' className='w-full ml-2 outline-none ' />
             </div>
             <div className='flex flex-col gap-10 my-9'>
                 {

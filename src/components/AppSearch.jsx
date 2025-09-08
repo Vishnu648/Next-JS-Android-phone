@@ -5,7 +5,7 @@ function AppSearch({ search }) {
   }
 
   return (
-    <input type="text" placeholder='Search Apps' className='w-full ml-2' onChange={(e) => handleSearch(e.target.value)} />
+    <input type="text" placeholder='Search Apps' className='w-full ml-2 outline-none' onChange={(e) => handleSearch(e.target.value)} />
   )
 }
 
